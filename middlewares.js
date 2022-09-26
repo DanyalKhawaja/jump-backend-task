@@ -3,12 +3,12 @@ import jwt from "jsonwebtoken";
 
 dotenv.config();
 
-const { SECRET } = process.env;
+const { JWT_SECRET } = process.env;
 
 export function auth(req, res, next) {
   const token = req.headers["jump-auth-token"];
   try {
-    jwt.verify(token, SECRET);
+    jwt.verify(token, JWT_SECRET);
     next();
   } catch (err) {
     console.log("Unauthorized request", err);

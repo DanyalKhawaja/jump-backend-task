@@ -9,12 +9,12 @@ import { auth } from "./middlewares.js";
 dotenv.config();
 const app = express();
 
-const { PORT, SECRET } = process.env;
+const { PORT, JWT_SECRET } = process.env;
 
 app.use(express.json());
 
 app.post("/api/v1/register", (req, res) => {
-  const token = jwt.sign({ token: "valid" }, SECRET);
+  const token = jwt.sign({ token: "valid" }, JWT_SECRET);
   sendEmail(token);
 });
 

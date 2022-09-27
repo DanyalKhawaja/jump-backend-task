@@ -19,5 +19,9 @@
     "prepare": "husky install",
     "test": "yarn mocha --timeout 45000 --exit",
     "start": "sudo node ./src/index.js" 
+  },
+  "lint-staged": {
+    "**/*.{js,json}": "prettier --write",
+    "**/*.{js}": "eslint --fix"
   }
 }

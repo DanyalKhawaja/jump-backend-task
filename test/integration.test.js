@@ -3,7 +3,7 @@ import chaiHttp from "chai-http";
 import { describe } from "mocha";
 import app from "../src/app.js";
 import conn from "../src/db-manager.js";
-import { genRandValue, genToken, getCurrDateVal } from "../utils.js";
+import { genRandValue, genToken, getCurrDateVal } from "../src/utils.js";
 
 chai.use(chaiHttp);
 const http = chai.request(app).keepOpen();

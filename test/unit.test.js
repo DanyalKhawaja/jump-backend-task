@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { dateVariance, genRandValue, getCurrDateVal } from "../utils.js";
+import { dateVariance, genRandValue, getCurrDateVal } from "../src/utils.js";
 
 describe("Unit tests", () => {
   it("Test genRandValue", (done) => {

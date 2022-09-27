@@ -15,7 +15,8 @@ const {
     options: { dbName },
   };
   
-  export const conn = mongoose.connect(mongo.uri, mongo.options);
+
+  export const conn = mongoose.connect(mongo.uri, mongo.options).then();
   
   
 

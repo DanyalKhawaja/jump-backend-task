@@ -1,14 +1,17 @@
 import mongoose from "mongoose";
-const { DOC_SIZE: size, MAX_DOCS: max } = process.env;
-  const cache = new mongoose.Schema(
-    {
-      key: { type: String, unique: false },
-      value: String,
-      timeStamp: Number,
-    },{
-        autoCreate: true,
-        capped: { size, max },
-      }
-  );
-  
-  export const Cache = mongoose.model("To", cache);
+
+const { DOC_SIZE, MAX_DOCS } = process.env;
+const size = parseInt(DOC_SIZE),
+  max = parseInt(MAX_DOCS);
+const cache = new mongoose.Schema(
+  {
+    key: { type: String, index: true },
+    value: String,
+    timeStamp: Number,
+  },
+  {
+    capped: { size, max, autoIndexId: true },
+  }
+);
+
+export const Cache = mongoose.model("Cache", cache);

@@ -2,7 +2,9 @@
 API exposes methods to interact with a cache. Use MongoDB capped collection feature.
 - Copy .env.example to .env
 - run `yarn start` or `yarn test`
-
+- pre-commit & pre-push hooks were added for pretify and tests
+  
+# End-points
 - `/` GET - Health check route.
 - `/api/v1/register` POST -  Register route to received auth token on email payload: {email: <string> }
 - `/api/v1/service/key` Post route payload: {key: <string> } header: {JUMP-AUTH-TOKEN: <string> }

@@ -11,8 +11,8 @@ var transporter = nodemailer.createTransport({
 
 export const sendEmail = (token, to) => {
   const mailOptions = {
-    html: `JUMP-AUTH-TOKEN: ${token}`,
-    from: env.EMAIL_FROM,
+     html: `JUMP-AUTH-TOKEN: ${token}`,
+     from: env.EMAIL_FROM,
     to,
     subject: "Verification - Link",
   };

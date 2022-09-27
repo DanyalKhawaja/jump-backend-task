@@ -21,9 +21,9 @@
     "start": "sudo node ./src/index.js"
   },
   "lint-staged": {
-    "**/*.{js,json}": [
+    "src/**/*.{js,json}": [
       "prettier --write",
-      "eslint --fix"
+       "eslint --fix"
     ]
   }
 }
